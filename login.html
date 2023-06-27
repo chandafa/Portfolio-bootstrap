@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>Login Form</title>
+    <style>
+      /* Style untuk elemen input */
+      .inputtext {
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #f0f8ff;
+        font-size: 16px;
+        color: #333;
+        box-sizing: border-box;
+      }
+      /* Style untuk tombol login */
+      .tombol {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #daa520;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+      /* Style untuk kotak login */
+      .login-box {
+        width: 300px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        background-color: #fff;
+        box-sizing: border-box;
+      }
+      /* Style untuk logo */
+      .logo {
+        display: block;
+        margin: 0 auto 30px;
+        width: 80px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <form>
+        <input
+          type="text"
+          name="username"
+          placeholder="Username"
+          class="inputtext"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          class="inputtext"
+        />
+        <input type="button" value="Login" class="tombol" onclick="login()" />
+      </form>
+    </div>
+    <script>
+      // Objek yang menyimpan data login untuk masing-masing user
+      var users = {
+        user1: {
+          password: "password1",
+          url: "https://infoitchandra.blogspot.com",
+        },
+        user2: {
+          password: "password2",
+          url: "paste link halaman yang akan dituju di sini/",
+        },
+        user3: {
+          password: "password3",
+          url: "paste link halaman yang akan dituju di sini/",
+        },
+      };
+
+      function login() {
+        var username = document.getElementsByName("username")[0].value;
+        var password = document.getElementsByName("password")[0].value;
+        if (users[username] && users[username].password == password) {
+          window.open(users[username].url, "_blank");
+        } else {
+          alert("Username atau password salah!");
+        }
+      }
+    </script>
+  </body>
+</html>
